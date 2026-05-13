@@ -1,0 +1,16 @@
+package com.devstack.carrental.carrental.repository;
+
+import com.devstack.carrental.carrental.entity.User;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+import java.util.Optional;
+
+@Repository
+public interface UserRepository extends JpaRepository<User, Integer> {
+    Optional<User> findByEmail(String email);
+    boolean existsByEmail(String email);
+    java.util.List<User> findByRole(User.Role role);
+    java.util.List<User> findByIsActive(boolean isActive);
+    Optional<User> findSystemUserByEmail(String email);
+}
