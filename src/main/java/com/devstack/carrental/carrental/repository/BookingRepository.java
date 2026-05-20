@@ -9,21 +9,9 @@ import org.springframework.stereotype.Repository;
 import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
+import java.util.UUID;
 
 @Repository
-public interface BookingRepository extends JpaRepository<Booking, Integer> {
-    Optional<Booking> findByBookingRef(String bookingRef);
-    List<Booking> findByCustomerId(Integer customerId);
-    List<Booking> findByVehicleId(Integer vehicleId);
-    List<Booking> findByStatus(Booking.BookingStatus status);
-    List<Booking> findByCustomerIdAndStatus(Integer customerId, Booking.BookingStatus status);
+public interface BookingRepository extends JpaRepository<Booking, UUID> {
 
-    @Query("SELECT b FROM Booking b WHERE b.vehicle.id = :vehicleId " +
-           "AND b.status NOT IN ('CANCELLED', 'COMPLETED', 'NO_SHOW') " +
-           "AND (b.pickupDate <= :dropoff AND b.dropoffDate >= :pickup)")
-    List<Booking> findConflictingBookings(
-        @Param("vehicleId") Integer vehicleId,
-        @Param("pickup") LocalDate pickupDate,
-        @Param("dropoff") LocalDate dropoffDate
-    );
 }

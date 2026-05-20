@@ -5,6 +5,7 @@ import lombok.*;
 
 import java.time.LocalDateTime;
 import java.util.List;
+import java.util.UUID;
 
 @Entity
 @Table(name = "vehicle_category")
@@ -16,9 +17,9 @@ import java.util.List;
 public class VehicleCategory {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.UUID)
     @Column(name = "property_id")
-    private Integer id;
+    private UUID id;
 
     @Column(name = "category", length = 45)
     private String category;

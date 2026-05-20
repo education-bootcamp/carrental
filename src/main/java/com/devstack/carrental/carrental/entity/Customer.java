@@ -4,6 +4,7 @@ import lombok.*;
 
 import java.time.LocalDate;
 import java.util.List;
+import java.util.UUID;
 
 @Entity
 @Table(name = "customer")
@@ -15,9 +16,9 @@ import java.util.List;
 public class Customer {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.UUID)
     @Column(name = "property_id")
-    private Integer id;
+    private UUID id;
 
     @Column(name = "nic", nullable = false, length = 20)
     private String nic;

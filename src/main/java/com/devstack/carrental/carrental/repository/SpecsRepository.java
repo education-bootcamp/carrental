@@ -5,8 +5,9 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
+import java.util.UUID;
 
 @Repository
-public interface SpecsRepository extends JpaRepository<Specs, Integer> {
-    List<Specs> findByIsActive(Boolean isActive);
+public interface SpecsRepository extends JpaRepository<Specs, UUID> {
+
 }

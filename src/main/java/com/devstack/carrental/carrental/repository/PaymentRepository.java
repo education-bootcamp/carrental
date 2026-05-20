@@ -6,11 +6,9 @@ import org.springframework.stereotype.Repository;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.UUID;
 
 @Repository
-public interface PaymentRepository extends JpaRepository<Payment, Integer> {
-    Optional<Payment> findByPaymentRef(String paymentRef);
-    List<Payment> findByBookingId(Integer bookingId);
-    List<Payment> findByStatus(Payment.PaymentStatus status);
-    List<Payment> findByBookingIdAndPaymentType(Integer bookingId, Payment.PaymentType paymentType);
+public interface PaymentRepository extends JpaRepository<Payment, UUID> {
+
 }

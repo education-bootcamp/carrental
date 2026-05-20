@@ -5,8 +5,9 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
+import java.util.UUID;
 
 @Repository
-public interface LicenseImageRepository extends JpaRepository<LicenseImage, Integer> {
-    List<LicenseImage> findByCustomerId(Integer customerId);
+public interface LicenseImageRepository extends JpaRepository<LicenseImage, UUID> {
+
 }

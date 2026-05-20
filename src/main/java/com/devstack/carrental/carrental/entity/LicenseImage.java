@@ -2,6 +2,8 @@ package com.devstack.carrental.carrental.entity;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.util.UUID;
+
 @Entity
 @Table(name = "license_image")
 @Getter
@@ -12,9 +14,9 @@ import lombok.*;
 public class LicenseImage {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.UUID)
     @Column(name = "property_id")
-    private Integer id;
+    private UUID id;
 
     @Lob
     @Column(name = "file_name", nullable = false)

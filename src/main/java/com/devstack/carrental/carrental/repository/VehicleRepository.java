@@ -6,12 +6,9 @@ import org.springframework.stereotype.Repository;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.UUID;
 
 @Repository
-public interface VehicleRepository extends JpaRepository<Vehicle, Integer> {
-    Optional<Vehicle> findByRegNo(String regNo);
-    List<Vehicle> findByStatus(Vehicle.Status status);
-    List<Vehicle> findByVehicleCategoryId(Integer categoryId);
-    List<Vehicle> findByFuelType(Vehicle.FuelType fuelType);
-    List<Vehicle> findByTransmission(Vehicle.Transmission transmission);
+public interface VehicleRepository extends JpaRepository<Vehicle, UUID> {
+
 }

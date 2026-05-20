@@ -5,10 +5,9 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 import java.util.Optional;
+import java.util.UUID;
 
 @Repository
-public interface CustomerRepository extends JpaRepository<Customer, Integer> {
-    Optional<Customer> findByNic(String nic);
-    Optional<Customer> findByDrivingLicenseNo(String drivingLicenseNo);
-    Optional<Customer> findByUserId(Integer userId);
+public interface CustomerRepository extends JpaRepository<Customer, UUID> {
+
 }

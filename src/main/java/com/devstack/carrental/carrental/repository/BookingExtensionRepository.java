@@ -6,9 +6,9 @@ import org.springframework.stereotype.Repository;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.UUID;
 
 @Repository
-public interface BookingExtensionRepository extends JpaRepository<BookingExtension, Integer> {
-    Optional<BookingExtension> findByBookingId(Integer bookingId);
-    List<BookingExtension> findByStatus(BookingExtension.ExtensionStatus status);
+public interface BookingExtensionRepository extends JpaRepository<BookingExtension, UUID> {
+
 }
