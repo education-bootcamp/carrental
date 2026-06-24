@@ -32,7 +32,7 @@ import java.util.List;
 public class SecurityConfig {
 
     private static final String[] paths={
-            "/auth/**",
+            "/api/v1/auth/**",
             "/vehicle-categories/visitors/**"
     };
 
